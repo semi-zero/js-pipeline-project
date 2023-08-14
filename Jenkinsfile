@@ -7,9 +7,6 @@ pipeline {
 	stages {
 		stage("init") {
 			steps {
-				script {
-					gv = load "script.groovy"
-				}
 			}
 		}
 		stage("Checkout") {
@@ -26,11 +23,6 @@ pipeline {
 			when {
 				expression {
 					params.executeTests
-				}
-			}
-			steps {
-				script {
-					gv.testApp()
 				}
 			}
 		}
